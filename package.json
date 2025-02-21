@@ -1,10 +1,11 @@
 {
   "name": "bluwox_backend_server",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "./dist/server.js",
   "scripts": {
     "test": "jest --verbose",
     "build": "tsc --build",
+    "prestart": "npm run build",
     "start": "node ./dist/server.js",
     "dev": "nodemon ./src/server.ts"
   },
