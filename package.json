@@ -1,7 +1,7 @@
 {
   "name": "bluwox_backend_server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest --verbose",
     "build": "tsc --build",
