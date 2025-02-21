@@ -2,11 +2,11 @@ import dotenv from 'dotenv';
 import { createApp } from './createApp';
 import pool from './config/db'; 
 
-dotenv.config(); // Load .env
+dotenv.config(); 
 
 async function startServer() {
   try {
-    // Option 1: Simple getConnection test
+    // getConnection test
     const connection = await pool.getConnection();
     console.log('Database connection established successfully.');
     connection.release();
@@ -15,7 +15,6 @@ async function startServer() {
     const app = createApp();
 
     // Read port from env or default to 3000
-    // const PORT = process.env.PORT || 3000;
     const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 
@@ -29,5 +28,5 @@ async function startServer() {
   }
 }
 
-// Invoke the startup function
+// Invoke startup function
 startServer();
