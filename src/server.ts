@@ -15,10 +15,12 @@ async function startServer() {
     const app = createApp();
 
     // Read port from env or default to 3000
-    const PORT = process.env.PORT || 3000;
+    // const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+
 
     // Start listening
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0',() => {
       console.log(`Server listening on port ${PORT}`);
     });
   } catch (error) {
