@@ -1,15 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import authRoutes from './routes/authRoutes';
 import tasksRoutes from './routes/tasksRoutes';
 
 export function createApp() {
   const app = express();
-
-  // Security Middleware
-  app.use(helmet());
 
   // Rate Limiting Middleware
   const limiter = rateLimit({
